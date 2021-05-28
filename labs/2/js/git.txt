@@ -1,0 +1,6 @@
+git status - проверить статус отслеживаемых файлов
+git add {путь к файлу из status} - добавить слежение за файлом
+git commit {путь к файлу из status} -m"Commit Title" - создать контрольную точку для файла
+git remote add origin https://github.com/LetWillBe/JS_labs.git  - подключить локальный репозиторий к GitHub
+git branch -M main 
+git push -u origin main - запушить изменения локального репозитория на GitHub
