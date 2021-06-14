@@ -1,4 +1,4 @@
-`use strict`;
+"use strict";
 //https://javascript.ru/tutorial/object/intro
 //Объекты- это струтуры которые могут сохранят в себе любые типы данных
 // в формате {ключ: значение}
@@ -33,7 +33,8 @@ delete options.name;
 for (let key in options) {
 	if (typeof(options[key]) === 'object') {//проверка если ключ объекта options сам явлется объектом
 		for (let i in options[key]) {
-			console.log(`свойство  ${i} имеет значение ${options[key][i]}`);//перебор свойств объекта options[key] находящегося внутри объекта options
+			console.log(`свойство  ${i} имеет значение ${options[key][i]}`);
+			//перебор свойств объекта options[key] находящегося внутри объекта options
 		}
 	} else {
 		console.log(`свойство  ${key} имеет значение ${options[key]}`);
@@ -57,7 +58,8 @@ let counter = 0;
 for (let key in options1) {
 	if (typeof(options1[key]) === 'object') {//проверка если ключ объекта options сам явлется объектом
 		for (let i in options1[key]) {
-			console.log(`свойство  ${i} имеет значение ${options1[key][i]}`);//перебор свойств объекта options[key] находящегося внутри объекта options
+			console.log(`свойство  ${i} имеет значение ${options1[key][i]}`);
+			//перебор свойств объекта options[key] находящегося внутри объекта options
 			counter++;
 		}
 	} else {

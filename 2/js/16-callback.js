@@ -1,7 +1,7 @@
 
 //Callback
 
-'use strict';
+"use strict";
 
 //--------------------
 

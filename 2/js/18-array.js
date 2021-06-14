@@ -1,4 +1,4 @@
-`use strict`;
+"use strict";
 
 const arr = [1, 2, 3, 6, 8];
 
@@ -11,7 +11,7 @@ arr.push(10);//добавляет элемент в конец массива
 //перебор всех элементов массива
 
 //v 1 (for)
-for (let i = 0, i < arr.length; i++) {
+for (let i = 0; i < arr.length; i++) {
 	console.log(arr[i]);
 }
 
@@ -26,14 +26,17 @@ console.log(arr.length);// выдает длину массива(последн
 
 //v3  Метод forEach
 //позвояет гибко перебрать все элементы которые находятся внутри массива
-arr.forEach(function(item, i, arr)// item - элемент который мы перебираем(любое имя), i  номер по порядку, arr - ссылка на тото мссив, который перебирается
+arr.forEach(function(item, i, arr)
+// item - элемент который мы перебираем(любое имя), i  номер по порядку,
+//arr - ссылка на тото мссив, который перебирается
 {
 	console.log(`${i}: ${item} внутри массива ${arr}`);
 });
 
 //остальные методы перебора
 arr.map();
-arr.every/some();
+arr.every();
+arr.some();
 arr.filter();
 arr.reduce();
 
@@ -51,10 +54,11 @@ console.log(product.join(`; `));
 //сортирует эелементы внутри массива
 product.sort();//Если не передать функцию сравнения - сортирует как строки
 
+//функция сравнения чисел, основанная на алгоритме быстрой сортировки
+//http://algolist.ru/sort/quick_sort.php
 function compareNum(a, b) {
 	return a - b;
-};//сравнение чисел, основаное на алгоритме быстрой сортировки
-//http://algolist.ru/sort/quick_sort.php
+}
 arr.sort(compareNum);//числа в массиве отсортируются по порядку  как числа
 
 //Псевдомассив
