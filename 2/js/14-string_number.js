@@ -42,6 +42,7 @@ console.log(logg.substr(6, 5));//world
 // Math.min - получение минимального числа
 // Math.max - получение максимального числа и т.д.
 const num = 12.2;
+console.log(Math.pow(num, export));//возводит  num в степень exp
 console.log(Math.round(num));//округление до ближайшего целого (12)
 console.log(Math.random());//случайное число от 0 до 1
 console.log(Math.floor());//округление в меньшую сторону
