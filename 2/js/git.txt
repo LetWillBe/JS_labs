@@ -1,4 +1,8 @@
 git init - инициализация репозитория
+
+git config --global user.name "LetWillBe"
+git config --global user.email balksamuri@gmail.com
+
 git status - проверить статус отслеживаемых файлов
 git add {путь к файлу из status} - добавить слежение за файлом
 git commit {путь к файлу из status} -m"Commit Title" - создать контрольную точку для файла
