@@ -6,10 +6,16 @@ git config --global user.email balksamuri@gmail.com
 git status - проверить статус отслеживаемых файлов(репозитория)
 git add {путь к файлу из status} - добавить слежение за файлом
 git add -A - следить за всеми файлами в репозитории
-git commit {путь к файлу из status} -m"Commit Title" - создать контрольную точку для файла
-git remote add origin https://github.com/LetWillBe/JS_labs.git  - подключить локальный репозиторий к GitHub
-git branch -M main 
-git push -u origin main - запушить изменения локального репозитория на GitHub
+
+git commit {путь к файлу из status} -m "Commit Title" - создать контрольную точку для файла
+git commit -a -m "Commit Title" - добавить в коммит все файлы
+
+git log - посмотреть лог коммитов
+
+git remote add origin https://github.com/LetWillBe/repository_name.git  - подключить локальный репозиторий к репозиторию repository_name на гитхабе 
+
+git branch -M main - создать ветку main
+git push -u origin main - отправить изменения локального репозитория на GitHub в ветку(branch) main
 git push - запушить изменения локального репозитория на GitHub (если уже запускал предыдущие две команды)
 
 Чтобы удалить файл из индекса, не удаляя его в рабочей директории, можно дать команду:
