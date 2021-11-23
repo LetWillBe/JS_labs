@@ -4,37 +4,42 @@
 //----------------
 let a = '4';
 if (a === 4) {
-  console.log('OK!');
+    console.log('OK!');
 } else {
-  console.log('ERROR');
+    console.log('ERROR');
 }
-//----------------
-const num = 50;
-if (num < 49) {
-  console.log('< 49');
-} else if (num > 100) {
-  console.log ('Больше 100');
-} else {
-  console.log ('50-99');
-}
-//Тернарный оператор - в его работе учавствует три аргумента
-//    1                2                    3
-(num === 50) ? console.log('50') : console.log("ERROR");
 
-//-----------------------
+
+const num0 = 50;
+if (num0 < 49) {
+    console.log('< 49');
+} else if (num0 > 100) {
+    console.log('Больше 100');
+} else {
+    console.log('50-99');
+}
+
+//Тернарный оператор - в его работе учавствует три аргумента
+//1-условие    2-действие если условие выполнено
+const num1 = 50;
+(num1 === 50) ? console.log('50'): console.log("ERROR");
+//                                 3- действие если услоыие не выполнено
+
 //switch выполняет только строгое сравнение (===)
-const num1 = '50';
-switch (num1) {
-  case 49:/* Строгое сравнение num1 === 49 */
-    console.log('49');
-    break;/*если услови выполнилось - не переходить к проверке следующщих кейсов*/
-  case 100:
-    console.log('100');
-    break;
-  case 50:
-    console.log('50');
-    break;
-  default:/*Если не выполнилось ни одно условие */
-    console.log ('Не получилось');
-    break;
+const num2 = '50';
+switch (num2) {
+    case 49:
+        /* Строгое сравнение num1 === 49 */
+        console.log('49');
+        break; /*если услови выполнилось - не переходить к проверке следующщих кейсов*/
+    case 100:
+        console.log('100');
+        break;
+    case 50:
+        console.log('50');
+        break;
+    default:
+        /*Если не выполнилось ни одно условие */
+        console.log('Не получилось');
+        break;
 }
