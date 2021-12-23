@@ -22,22 +22,21 @@
 Проверить, чтобы все работало без ошибок в консоли */
 
 "use strict";
-const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
 
+const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
 const personalMovieDB = {
     count: numberOfFilms,
-    movies: {}, //пустой объект
+    movies: {},
     actors: {},
-    genres: [], //пустой массив
+    genres: [],
     privat: false
 };
 
-const a = prompt('Один из последних просмотренных фильмов?', ''),
-    b = prompt('На сколько оцените его?', ''),
-    c = prompt('Один из последних просмотренных фильмов?', ''),
-    d = prompt('На сколько оцените его?', '');
+let answer1 = prompt('Один из последних просмотренных фильмов?', ''),
+    answer2 = prompt('На сколько оцените его?', ''),
+    answer3 = prompt('Один из последних просмотренных фильмов?', ''),
+    answer4 = prompt('На сколько оцените его?', '');
 
-personalMovieDB.movies[a] = b; //movies[a] - понимает кирилицу, movies.a - не понимает
-personalMovieDB.movies[c] = d;
-
+personalMovieDB.movies[answer1] = answer2;
+personalMovieDB.movies[answer3] = answer4;
 console.log(personalMovieDB);
