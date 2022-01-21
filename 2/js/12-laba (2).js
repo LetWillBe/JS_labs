@@ -15,7 +15,7 @@
 
 // Код возьмите из предыдущего домашнего задания
 
-const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
@@ -24,11 +24,39 @@ const personalMovieDB = {
     privat: false
 };
 
-let answer1 = prompt('Один из последних просмотренных фильмов?', ''),
-    answer2 = prompt('На сколько оцените его?', ''),
-    answer3 = prompt('Один из последних просмотренных фильмов?', ''),
-    answer4 = prompt('На сколько оцените его?', '');
+//3) При помощи условий проверить personalMovieDB.count, и если он меньше 10 - вывести сообщение 
+//"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель",
+//а если больше - "Вы киноман".А если не подошло ни к одному варианту - "Произошла ошибка"
+if (personalMovieDB.count < 10) {
+    alert("Просмотрено довольно мало фильмов");
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+    alert("Вы классический зритель");
+} else if (personalMovieDB.count >= 30) {
+    alert("Вы киноман");
+} else {
+    alert(`Произошла ошибка`);
+}
 
-personalMovieDB.movies[answer1] = answer2;
-personalMovieDB.movies[answer3] = answer4;
+//let answer1 = prompt('Один из последних просмотренных фильмов?', ''),
+//    answer2 = prompt('На сколько оцените его?', ''),
+//    answer3 = prompt('Один из последних просмотренных фильмов?', ''),
+//    answer4 = prompt('На сколько оцените его?', '');
+
+//personalMovieDB.movies[answer1]] = answer2;
+//personalMovieDB.movies[answer3] = answer4;
+
+//1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
+for (let i = 1; i < 3; i++) {
+    let answer1 = prompt('Один из последних просмотренных фильмов?', ''),
+        answer2 = prompt('На сколько оцените его?', '');
+    if (answer1 == '' || answer2 == '' || answer1 == null || answer2 == null || answer1.length > 50 || answer2.length > 50) {
+        --i;
+        alert(`Данные не введены или длина строки выше 50 символов`);
+    } else {
+        personalMovieDB.movies[answer1] = answer2;
+    }
+}
+
 console.log(personalMovieDB);
+
+//4) Потренироваться и переписать цикл выше еще двумя способами * /
