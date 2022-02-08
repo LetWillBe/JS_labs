@@ -3,6 +3,8 @@ git init - инициализация репозитория
 git config --global user.name "LetWillBe"
 git config --global user.email balksamuri@gmail.com
 
+git remote add origin https://github.com/LetWillBe/repository_name.git  - подключить локальный репозиторий к репозиторию repository_name на гитхабе 
+
 git status - проверить статус отслеживаемых файлов(репозитория)
 git add {путь к файлу из status} - добавить слежение за файлом
 git add -A - следить за всеми файлами в репозитории
@@ -11,8 +13,6 @@ git commit {путь к файлу из status} -m "Commit Title" - создат
 git commit -a -m "Commit Title" - добавить в коммит все файлы
 
 git log - посмотреть лог коммитов
-
-git remote add origin https://github.com/LetWillBe/repository_name.git  - подключить локальный репозиторий к репозиторию repository_name на гитхабе 
 
 git branch -M main - создать ветку main
 git push -u origin main - отправить изменения локального репозитория на GitHub в ветку(branch) main

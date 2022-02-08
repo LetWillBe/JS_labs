@@ -118,7 +118,7 @@ const options4 = {
         background: `red`,
     }
 };
-//помещаем внутрь {} то что хотим вынести
+//помещаем внутрь {} то что хотим вынести 
 const {
     border,
     background
