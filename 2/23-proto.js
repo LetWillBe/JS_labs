@@ -1,14 +1,16 @@
 'use strict';
 
 let str = "some";
-let strObj = new String(str);
+let strObj = new String(str); // создаём новую строку
+//* при использвоании любого метода на строке: JS делает её объетом
+//* потом применяет метод и возвращает в строку обратно
+console.log(typeof(str)); //string
+console.log(typeof(strObj)); //object
 
-console.log(typeof(str));//string
-console.log(typeof(strObj));//object
+//! Прототипно-Ориентированное Наследование
 
-//прототипно-ориентированное наследование
-
-console.dir([1, 2, 3]);//создаём экземпляр массива
+//* создаём экземпляр массива
+console.dir([1, 2, 3]);
 // _proto_: Array(0) - к нему можно применить методы для массива
 //т.е. эта струтктура подходит под прототип "массив"
 //и на неё можно воздействовать как на массив
@@ -18,33 +20,59 @@ console.dir([1, 2, 3]);//создаём экземпляр массива
 //А мы уже знаем что массив - это частный случай объекта
 
 
-//Объекты так же могут наследовать методы друг от друга(привет, React!)
+//* Объекты так же могут наследовать методы друг от друга(привет, React!)
 const soldier = {
-	hp: 500,
-	armor: 100,
-	sayUra: function () {
-		console.log("УРАА!!!");
-	}
+    hp: 500,
+    armor: 100,
+    sayUra: () => {
+        console.log("УРАА!!!");
+    }
 };
 const max = {
-	hp: 250,
+    hp: 250,
 };
 
-//устаревшая запись(deprecated)
-max._proto_ = soldier;//объект soldier является пртотипом объекта мax
+//* устаревшая запись(deprecated)
+max.__proto__ = soldier; //объект soldier является прототипом объекта мax
 // т.е. max будет иметь свои особенные свойства, а недостающие наследовать от объекта soldier
 
-console.log(max.armor);//100
-console.log(max.hp);//250
-max.sayUra;//УРАА!!!
+console.log(max.armor); //100
+console.log(max.hp); //250
+max.sayUra(); //УРАА!!!
 
-//вместо _proto_ лучше ипользовать
-Object.create();//создаёт новый объект с указанным прототипом и свойствами.
-Object.getPrototypeOf();//возвращает прототип (то есть, внутреннее свойство [[Prototype]]) указанного объекта.
-Object.setPrototypeOf();//устанавливает прототип (то есть, внутреннее свойство [[Prototype]]) указанного объекта в другой объект или null
+//* вместо __proto__
+const soldierNew = {
+    hp: 500,
+    armor: 100,
+    sayUra: () => {
+        console.log("УРАА!!!");
+    }
+};
+const maxNew = {
+    hp: 250,
+};
+//* устанавливает прототип (то есть, внутреннее свойство [[Prototype]]) указанного объекта в другой объект или null
+Object.setPrototypeOf(maxNew, soldierNew);
+maxNew.sayUra();
 
-Object.setPrototypeOf(max, soldier);//вместо max._proto_ = soldier
+//* создаёт новый объект с указанным прототипом и свойствами.
+const ivan = Object.create(soldierNew);
+ivan.sayUra();
 
-const Ivan = Object.create(soldier);//создаём объект Ivan который наследуется от прототипа soldier
+//* возвращает прототип (то есть, внутреннее свойство [[Prototype]]) указанного объекта.
+Object.getPrototypeOf(ivan);
+//{
+//    hp: 500,
+//    armor: 100,
+//    sayUra: ƒ
+//}
+//armor: 100
+//hp: 500
+//sayUra: () => {
+//        console.log("УРАА!!!");
+//    }
+//    [
+//        [Prototype]
+//    ]: Object
 
-//ООП - это о том как делать правильную архитектуру
+//! ООП - это о том как делать правильную архитектуру
