@@ -74,7 +74,7 @@ console.log(product.join(`; `));
 product.sort(); //Если не передать функцию сравнения - сортирует как строки
 
 //! функция сравнения чисел, основанная на алгоритме быстрой сортировки
-//http://algolist.ru/sort/quick_sort.php
+//! http://algolist.ru/sort/quick_sort.php
 let arr4 = [8, 9, 56, 7, 12, 85, 63];
 
 function compareNum(a, b) {
