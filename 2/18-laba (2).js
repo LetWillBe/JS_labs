@@ -14,3 +14,35 @@ P.S. Функции вызывать не обязательно*/
 "use strict";
 
 // Код возьмите из предыдущего домашнего задания
+
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+if (numberOfFilms < 10) {
+    alert(`Просмотрено довольно мало фильмов`);
+} else if (numberOfFilms >= 10 && numberOfFilms < 30) {
+    alert(`Вы классический зритель`);
+} else if (numberOfFilms >= 30) {
+    alert(`Вы киноман`);
+} else {
+    alert(`Что-то пошло не так!`);
+}
+
+for (let i = 1; i <= 3; ++i) {
+    let answer1 = prompt(`Один из просмотренных фильмов (${i} из 3)`, ''),
+        answer2 = prompt('На сколько оцените его?', '');
+    if (answer1 == null || answer2 == null || answer1 == '' || answer2 == '' || answer1.length > 50 || answer2.length > 50) {
+        --i;
+        alert(`Неверное значение или длина строки больше 50 символов`);
+    } else {
+        personalMovieDB.movies[answer1] = answer2;
+    }
+}
+
+console.log(personalMovieDB);
