@@ -20,6 +20,8 @@ git log - посмотреть лог коммитов
 
 git branch -M main - создать ветку main
 git checkout -b {branch name} - переключиться в ветку {branch name}
+git checkout main - переключиться в ветку main
+git push --set-upstream origin {branch name} - создать ветку {branch name} запушить изменения в неё
 
 git push -u origin main - отправить изменения локального репозитория на GitHub в ветку(branch) main
 git push - запушить изменения локального репозитория на GitHub (если уже запускал предыдущие две команды)
