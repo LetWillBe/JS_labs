@@ -17,6 +17,14 @@ P.S. Функции вызывать не обязательно*/
 
 let numberOfFilms;
 
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
 function start() {
     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
@@ -25,14 +33,6 @@ function start() {
 }
 
 start();
-
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
 
 function detectPersonalLevel() {
     if (numberOfFilms < 10) {
@@ -63,8 +63,18 @@ function rememberMyFilms() {
 
 rememberMyFilms();
 
+function writeYourGenres() {
+    for (let i = 1; i <= 3; ++i) {
+        let genre;
+        genre = prompt(`Ваш любимый жанр под номером ${i}`, '');
+        personalMovieDB.genres[i - 1] = genre;
+    }
+}
+
+writeYourGenres();
+
 function showMyDB() {
-    while (!personalMovieDB.privat) {
+    if (!personalMovieDB.privat) {
         console.log(personalMovieDB);
     }
 }
