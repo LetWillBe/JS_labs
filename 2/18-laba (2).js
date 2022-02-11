@@ -63,4 +63,10 @@ function rememberMyFilms() {
 
 rememberMyFilms();
 
-console.log(personalMovieDB);
+function showMyDB() {
+    while (!personalMovieDB.privat) {
+        console.log(personalMovieDB);
+    }
+}
+
+showMyDB();
