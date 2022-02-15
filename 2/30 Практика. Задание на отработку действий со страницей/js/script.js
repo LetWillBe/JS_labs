@@ -24,3 +24,35 @@ const movieDB = {
     ]
 };
 
+//! 1
+//*1-1
+let promoRemove = document.querySelectorAll(".promo__adv *");
+promoRemove.forEach((item) => {
+    item.remove();
+});
+
+//! 2
+let changeGenre = document.querySelector(".promo__genre");
+changeGenre.textContent = "драма";
+
+//! 3
+let changeBackground = document.querySelector(".promo__bg");
+changeBackground.style.backgroundImage = 'url("img/bg.jpg")';
+//changeBackground.style.cssText = 'background-image: url("img/bg.jpg")';
+
+//! 4
+//let filmsSort = movieDB.movies.sort();
+movieDB.movies.sort();
+
+//! 5
+//let filmsListItem = document.querySelectorAll('.promo__interactive-item');
+//filmsListItem.forEach((item) => {
+//    item.remove();
+//}); говнокод()
+let filmsList = document.querySelector(".promo__interactive-list");
+filmsList.innerHTML = "";
+movieDB.movies.forEach((item, index) => {
+    filmsList.insertAdjacentHTML('beforeend', `
+	<li class="promo__interactive-item">${index + 1}. ${item}<div class="delete"></div></li>
+	`);
+});
