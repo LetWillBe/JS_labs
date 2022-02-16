@@ -34,6 +34,7 @@
 //console.log(document.querySelector('#current').parentElement);
 
 //! data атрибутами являются те атрибуты, которые мы прописываем в html тегах в ситуативных случаях.
+//! https://developer.mozilla.org/ru/docs/Learn/HTML/Howto/Use_data_attributes
 //? Пример
 //* <div class="window" data-modal="3"></div>
 //* В css коде мы пишем [data-modal="3"]{}
