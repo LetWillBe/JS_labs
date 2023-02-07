@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
 let str = "some";
 let strObj = new String(str); // создаём новую строку
 //* при использвоании любого метода на строке: JS делает её объетом
 //* потом применяет метод и возвращает в строку обратно
-console.log(typeof(str)); //string
-console.log(typeof(strObj)); //object
+console.log(typeof str); //string
+console.log(typeof strObj); //object
 
 //! Прототипно-Ориентированное Наследование
 
@@ -20,17 +20,16 @@ let img = "proto.png";
 //или, другими словами, массив наследует методы от объекта
 //А мы уже знаем что массив - это частный случай объекта
 
-
 //* Объекты так же могут наследовать методы друг от друга(привет, React!)
 const soldier = {
-    hp: 500,
-    armor: 100,
-    sayUra: () => {
-        console.log("УРАА!!!");
-    }
+	hp: 500,
+	armor: 100,
+	sayUra: () => {
+		console.log("УРАА!!!");
+	},
 };
 const max = {
-    hp: 250,
+	hp: 250,
 };
 
 //* устаревшая запись(deprecated)
@@ -43,14 +42,14 @@ max.sayUra(); //УРАА!!!
 
 //* вместо __proto__
 const soldierNew = {
-    hp: 500,
-    armor: 100,
-    sayUra: () => {
-        console.log("УРАА!!!");
-    }
+	hp: 500,
+	armor: 100,
+	sayUra: () => {
+		console.log("УРАА!!!");
+	},
 };
 const maxNew = {
-    hp: 250,
+	hp: 250,
 };
 //* устанавливает прототип (то есть, внутреннее свойство [[Prototype]]) указанного объекта в другой объект или null
 Object.setPrototypeOf(maxNew, soldierNew);
